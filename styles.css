@@ -199,7 +199,7 @@ h1 strong::after {
   object-fit: contain;
   filter: drop-shadow(0 14px 12px rgba(102, 62, 28, .17));
   transform-origin: 50% 84%;
-  animation: cheerBounce 1.05s .9s ease-in-out infinite;
+  animation: cheerBounce .95s .9s cubic-bezier(.45, 0, .55, 1) infinite;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -224,23 +224,8 @@ h1 strong::after {
   border-radius: 50%;
   background: rgba(112, 68, 42, .16);
   filter: blur(5px);
-  animation: shadowBounce 1.05s .9s ease-in-out infinite;
+  animation: shadowBounce .95s .9s ease-in-out infinite;
 }
-
-.cheer-particle {
-  position: absolute;
-  z-index: 4;
-  color: var(--rose);
-  font-size: 20px;
-  line-height: 1;
-  opacity: 0;
-  animation: cheerPop 1.4s ease-out infinite;
-}
-
-.particle-one { top: 10%; left: 8%; color: #f2ad34; animation-delay: .95s; }
-.particle-two { top: 6%; right: 8%; font-size: 17px; animation-delay: 1.2s; }
-.particle-three { top: 42%; right: -1%; color: #f2ad34; font-size: 14px; animation-delay: 1.55s; }
-.particle-four { top: 45%; left: 0; font-size: 13px; animation-delay: 1.85s; }
 
 .letter-card {
   position: relative;
@@ -293,18 +278,14 @@ h1 strong::after {
 @keyframes flyUp { 0% { transform: translate(-50%, 0) scale(.5) rotate(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translate(calc(-50% + var(--drift)), -75vh) scale(1.3) rotate(var(--rotate)); opacity: 0; } }
 @keyframes cheerEntrance { from { opacity: 0; transform: translateY(45px) scale(.55); } to { opacity: 1; transform: none; } }
 @keyframes cheerBounce {
-  0%, 100% { transform: translateY(0) rotate(-2deg) scaleX(1.01); }
-  45% { transform: translateY(-19px) rotate(2deg) scaleX(.98); }
-  57% { transform: translateY(-19px) rotate(2deg) scaleX(.98); }
+  0%, 100% { transform: translateY(0) scaleX(1.06) scaleY(.94); }
+  12% { transform: translateY(-5px) scaleX(.97) scaleY(1.03) rotate(-2deg); }
+  48% { transform: translateY(-50px) scaleX(.98) scaleY(1.02) rotate(2deg); }
+  58% { transform: translateY(-50px) scaleX(.98) scaleY(1.02) rotate(2deg); }
+  88% { transform: translateY(-5px) scaleX(.97) scaleY(1.03) rotate(-2deg); }
 }
-@keyframes shadowBounce { 0%, 100% { transform: scaleX(1); opacity: .8; } 48%, 57% { transform: scaleX(.68); opacity: .35; } }
+@keyframes shadowBounce { 0%, 100% { transform: scaleX(1); opacity: .8; } 48%, 58% { transform: scaleX(.48); opacity: .22; } }
 @keyframes burstSpin { to { transform: rotate(360deg); } }
-@keyframes cheerPop {
-  0% { opacity: 0; transform: translateY(10px) scale(.2) rotate(-15deg); }
-  25% { opacity: 1; transform: translateY(0) scale(1.2) rotate(8deg); }
-  65% { opacity: .9; }
-  100% { opacity: 0; transform: translateY(-28px) scale(.75) rotate(22deg); }
-}
 
 @media (min-width: 700px) {
   .hero::before, .heart-section::before { content: ""; position: absolute; inset: 28px; border: 1px solid rgba(222, 176, 174, .35); pointer-events: none; }
