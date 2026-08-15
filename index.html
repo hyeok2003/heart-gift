@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff7f6" />
+    <meta name="description" content="정현에게" />
+    <meta property="og:title" content="정현에게" />
+    <meta property="og:description" content="김성혁으로부터" />
+    <title>정현에게</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <main>
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="ambient-hearts" aria-hidden="true">
+          <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+        </div>
+
+        <p class="eyebrow">FROM. 김성혁</p>
+        <h1 id="hero-title"><small>TO.</small> <strong>정현이</strong></h1>
+
+        <button class="gift" id="giftButton" type="button" aria-label="하트 선물 열기" aria-expanded="false">
+          <span class="gift-glow"></span>
+          <span class="gift-box" aria-hidden="true">
+            <span class="gift-lid"><i></i></span>
+            <span class="gift-body"><i></i></span>
+            <span class="gift-heart">♥</span>
+          </span>
+          <span class="tap-label">열기</span>
+          <span class="tap-arrow" aria-hidden="true">↓</span>
+        </button>
+      </section>
+
+      <section class="heart-section" id="heartStage" aria-label="정현에게 보내는 하트" hidden>
+        <div class="big-heart" aria-hidden="true">
+          <span class="heart-shape">♥</span>
+          <span class="heart-shine"></span>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
